@@ -1,18 +1,16 @@
 $(function(){
     var startCameraAbove = function(){
-                    CameraPreview.startCamera({
-                    tapEnabled: false,
-                    toBack: false,
-                    previewDrag: false,
-                    tapPhoto: false
-                    });
-                    hideCamera();
+                CameraPreview.startCamera({
+                toBack: false,
+                tapPhoto: false
+                });
+                hideCamera();
     };
 
     var stopCamera = function(){
-                    setTimeout(function(){
-                        CameraPreview.stopCamera()},
-                        3000);
+                setTimeout(function(){
+                    CameraPreview.stopCamera()},
+                    3000);
     };
 
     var hideCamera = function(){
@@ -33,7 +31,7 @@ $(function(){
                        },
                        function ( base64PictureData ){
                             imageData = 'data:image/jpeg;base64,' + base64PictureData;
-                            document.getElementById('originalPicture').src = imageData;
+                            $(originalPicture).attr("src", imageData);
                        });
                    },1000);
                     stopCamera();
