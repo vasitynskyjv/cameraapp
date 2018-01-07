@@ -36,5 +36,8 @@ $(function(){
                 stopCamera();
                 };
 
-    document.getElementById('capturePhoto').addEventListener('click', startCameraAbove, false);
+    $(capturePhoto).on('click', function(e) {
+        startCameraAbove();
+    });
+    //document.getElementById('capturePhoto').addEventListener('click', startCameraAbove, false);
 });
